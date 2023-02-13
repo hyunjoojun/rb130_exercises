@@ -1,6 +1,6 @@
 require 'minitest/autorun'
-require "minitest/reporters"
-Minitest::Reporters.use!
+# require "minitest/reporters"
+# Minitest::Reporters.use!
 
 require_relative 'cash_register'
 require_relative 'transaction'
@@ -36,7 +36,8 @@ class CashRegisterTest < Minitest::Test
 
   def test_prompt_for_payment
     input = StringIO.new("20\n")
-    transaction1.prompt_for_payment(input: input)
+    output = StringIO.new
+    transaction1.prompt_for_payment(input: input, output: output)
     assert_equal(20, transaction1.amount_paid)
   end
 end
