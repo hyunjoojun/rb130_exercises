@@ -17,5 +17,10 @@ class TextTest < Minitest::Test
 
   def teardown
     @file.close
+    puts "File has been closed: #{@file.closed?}"
+  end
+
+  def test_word_count
+    assert_equal(72, @text.word_count)
   end
 end
