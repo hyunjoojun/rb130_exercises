@@ -8,8 +8,15 @@
 #   false
 # end
 
-def any?(collection)
-  collection.each { |item| return true if yield(item) }
+# def any?(collection)
+#   collection.each { |item| return true if yield(item) }
+#   false
+# end
+
+def any?(arr, &block)
+  arr.each do |ele|
+    return true if block.call(ele)
+  end
   false
 end
 
