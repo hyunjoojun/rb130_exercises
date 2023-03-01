@@ -3,6 +3,13 @@ def none?(collection)
   true
 end
 
+# def none?(arr, &block)
+#   arr.each do |ele|
+#     return false if block.call(ele)
+#   end
+#   true
+# end
+
 p none?([1, 3, 5, 6]) { |value| value.even? } == false
 p none?([1, 3, 5, 7]) { |value| value.even? } == true
 p none?([2, 4, 6, 8]) { |value| value.odd? } == true
