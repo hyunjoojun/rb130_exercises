@@ -3,6 +3,13 @@ def all?(collection)
   true
 end
 
+# def all?(arr, &block)
+#   arr.each do |ele|
+#     return false unless block.call(ele)
+#   end
+#   true
+# end
+
 p all?([1, 3, 5, 6]) { |value| value.odd? } == false
 p all?([1, 3, 5, 7]) { |value| value.odd? } == true
 p all?([2, 4, 6, 8]) { |value| value.even? } == true
