@@ -14,6 +14,17 @@ def max_by(arr)
   max_value
 end
 
+def max_by2(arr)
+  max_value = arr.first
+  arr.each do |ele|
+    compare_value = yield(max_value)
+    if yield(ele) > compare_value
+      max_value = ele
+    end
+  end
+  max_value
+end
+
 p max_by([1, 5, 3]) { |value| value + 2 } == 5
 p max_by([1, 5, 3]) { |value| 9 - value } == 1
 p max_by([1, 5, 3]) { |value| (96 - value).chr } == 1
