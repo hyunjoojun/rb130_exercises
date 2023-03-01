@@ -7,6 +7,13 @@ def each_with_index(arr)
   arr
 end
 
+# def each_with_index(arr)
+#   0.upto(arr.size - 1) do |index|
+#     yield(arr[index], index)
+#   end
+#   arr
+# end
+
 result = each_with_index([1, 3, 6]) do |value, index|
   puts "#{index} -> #{value**index}"
 end
