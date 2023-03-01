@@ -6,6 +6,14 @@ def count(arr)
   true_count
 end
 
+# def count(arr, &block)
+#   count = 0
+#   arr.each do |ele|
+#     count += 1 if block.call(ele)
+#   end
+#   count
+# end
+
 p count([1,2,3,4,5]) { |value| value.odd? } == 3
 p count([1,2,3,4,5]) { |value| value % 3 == 1 } == 2
 p count([1,2,3,4,5]) { |value| true } == 5
