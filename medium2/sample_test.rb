@@ -21,6 +21,14 @@ class TextTest < Minitest::Test
     assert_equal(expected_count, @text.word_count)
   end
 
+  def test_word_count2
+    count = 0
+    @string.split.each do |_|
+      count += 1
+    end
+    assert_equal(count, @text.word_count)
+  end
+
   def teardown
     @file.close
     puts "File has been closed: #{@file.closed?}"
