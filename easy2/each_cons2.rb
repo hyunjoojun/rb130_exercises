@@ -9,6 +9,12 @@ def each_cons(arr, cons)
   nil
 end
 
+def each_cons2(arr, num_of_ele)
+  0.upto(arr.size - num_of_ele) do |idx|
+    yield(*arr[idx, num_of_ele])
+  end
+end
+
 hash = {}
 each_cons([1, 3, 6, 10], 1) do |value|
   hash[value] = true
